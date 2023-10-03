@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Visualización del Experimento Ganador del Nobel</title>
+</head>
+<body>
+    <header>
+        <h1>Visualización del Experimento Ganador del Nobel</h1>
+        <nav>
+            <ul>
+                <li><a href="#generation">Generación de Pulso</a></li>
+                <li><a href="#manipulation">Manipulación de Pulso</a></li>
+                <li><a href="#interaction">Interacción con la Muestra</a></li>
+                <li><a href="#measurement">Medición de Electrones</a></li>
+                <li><a href="#analysis">Análisis de Datos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="experiment-scheme">
+        <h2>Esquema Interactivo del Experimento</h2>
+        <label for="pulse-duration">Duración del Pulso (fs): </label>
+        <input type="range" id="pulse-duration" min="1" max="100" value="50">
+        <label for="pulse-compression">Compresión del Pulso (%): </label>
+        <input type="range" id="pulse-compression" min="1" max="100" value="50">
+        <label for="sample-type">Tipo de Muestra: </label>
+        <select id="sample-type">
+            <option value="atom">Átomo</option>
+            <option value="molecule">Molécula</option>
+        </select>
+        <button id="simulate-electron">Simular Emisión de Electrones</button>
+        <button id="analyse-data">Analizar Datos</button>
+        <p id="explanation"></p>
+        <svg width="800" height="300">
+            <rect width="120" height="60" x="0" y="120" fill="lightblue" id="laser" />
+            <line x1="120" y1="150" x2="180" y2="150" stroke="blue" stroke-width="7" id="pulse" />
+            <ellipse cx="300" cy="150" rx="60" ry="30" fill="lightgreen" id="mirror" />
+            <rect width="120" height="60" x="520" y="120" fill="yellow" id="sample" />
+            <ellipse cx="750" cy="150" rx="60" ry="30" fill="lightcoral" id="detector" />
+            <text x="30" y="110" fill="black">Láser</text>
+            <text x="540" y="110" fill="black">Muestra</text>
+            <text x="710" y="110" fill="black">Detector</text>
+        </svg>
+    </section>
+    <!-- Other sections remain the same -->
+    <footer>
+        <p>&copy; 2023 Visualización del Experimento Nobel. Desarrollado por Edrei Robles y ChatGPT.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
